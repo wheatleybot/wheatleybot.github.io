@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAuth2 Callback</title>
+</head>
+<body>
+    <h1>Processing Callback...</h1>
+    <p id="message"></p>
+
+    <script>
+        // Get the 'code' from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+
+        if (code) {
+            document.getElementById('message').innerText = `OAuth2 code received: ${code}`;
+
+            // Here, you would typically send this 'code' to your backend server
+            // to exchange it for an access token using Discord's API
+            // However, since GitHub Pages can't run server-side code, this
+            // example just displays the code on the page.
+
+        } else {
+            document.getElementById('message').innerText = 'No code found in URL';
+        }
+    </script>
+</body>
+</html>
